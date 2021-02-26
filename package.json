@@ -1,0 +1,38 @@
+{
+  "name": "handover",
+  "version": "1.0.0",
+  "description": "hsd plugin to resolve names on other networks like ENS and Namecoin",
+  "main": "lib/handover.js",
+  "scripts": {
+    "test": "bmocha --reporter spec test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imperviousinc/handover.git"
+  },
+  "keywords": [
+    "Handshake",
+    "HNS",
+    "Ethereum",
+    "ETH",
+    "ENS",
+    "Namecoin",
+    "NMC"
+  ],
+  "author": "Matthew Zipkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imperviousinc/handover/issues"
+  },
+  "homepage": "https://github.com/imperviousinc/handover#readme",
+  "dependencies": {
+    "bufio": "^1.0.7",
+    "ethers": "^5.0.31"
+  },
+  "peerDependencies": {
+    "hsd": "pinheadmz/hsd#dnsplugins1"
+  },
+  "devDependencies": {
+    "bmocha": "^2.1.5"
+  }
+}
