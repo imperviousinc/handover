@@ -4,7 +4,6 @@
 
 'use strict';
 
-// Peer dependency because in the plugin `wire` comes from hsd node
 const {wire} = require('bns');
 const {BufferReader} = require('bufio');
 

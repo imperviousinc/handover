@@ -30,7 +30,8 @@
     "ethers": "^5.0.31"
   },
   "peerDependencies": {
-    "hsd": "pinheadmz/hsd#dnsplugins1"
+    "hsd": "pinheadmz/hsd#dnsplugins1",
+    "bns": "~0.14.0",
   },
   "devDependencies": {
     "bmocha": "^2.1.5"
