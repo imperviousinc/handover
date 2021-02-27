@@ -33,7 +33,7 @@ describe('lib/ethereum', function () {
     console.log(addr);
   });
 
-  it.skip('should scan for EIP-634 text records', async () => {
+  it('should scan for EIP-634 text records', async () => {
     const EIP634 = [
       'avatar', 'description', 'display', 'email', 'keywords', 'mail', 'notice',
       'location', 'phone', 'url', 'com.github', 'com.peepth', 'com.linkedin',
