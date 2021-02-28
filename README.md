@@ -18,13 +18,34 @@ git fetch origin pull/558/head:dnsplugins1
 npm install imperviousinc/handover
 ```
 
-Edit the `json` file at `node_modules/handover/conf/infura_example.json`.
-Add your project ID and project secret then rename the file to `infura.json`
+Your Infura credentials can be passed to the plugin in the same way(s) as all
+other `hsd` configuraiton parameters:
 
-Run:
+Command line:
 
 ```
+hsd \
+ --plugins=handover \
+ --handover-infura-projectid=<...> \
+ --handover-infura-projectsecret=<...>
+``` 
+
+Environment variables:
+
+```
+export HSD_HANDOVER_INFURA_PROJECTID=<...>
+export HSD_HANDOVER_INFURA_PROJECTSECRET=<...>
 hsd --plugins handover
+```
+
+Configuration file:
+
+`~/.hsd/hsd.conf`:
+
+```
+handover-infura-projectid: <...>
+handover-infura-projectsecret: <...>
+plugins: handover
 ```
 
 You should see this in the log:
@@ -139,6 +160,16 @@ certified.badass.0x36fc69f0983E536D1787cC83f481581f22CCA2A1._eth.
 
 Subdomains: The plugin has not been tested on sub domains of names registered
 at the ENS contract root (e.g. `whynot.fuckingfucker.eth` or `yesiam.certified.badass`).
+
+## Testing
+
+Edit the `json` file at `conf/infura_example.json`.
+Add your project ID and project secret then rename the file to `infura.json`
+
+Run unit tests: `npm run test`
+
+Run integration test: `test/handover-plugin-test.sh`
+
 
 ## Credit
 
