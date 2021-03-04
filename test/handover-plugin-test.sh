@@ -6,7 +6,7 @@ export HSD_NETWORK=regtest
 hsd \
   --memory=true \
   --network=regtest \
-  --plugins=`pwd` \
+  --plugins=handover \
   --daemon
 
 sleep 2
@@ -31,7 +31,7 @@ hsd-rpc stop
 hsd \
   --memory=true \
   --network=regtest \
-  --plugins=`pwd` \
+  --plugins=handover \
   --rs-no-unbound \
   --daemon
 

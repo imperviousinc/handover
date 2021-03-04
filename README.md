@@ -161,19 +161,41 @@ certified.badass.0x36fc69f0983E536D1787cC83f481581f22CCA2A1._eth.
 Subdomains: The plugin has not been tested on sub domains of names registered
 at the ENS contract root (e.g. `whynot.fuckingfucker.eth` or `yesiam.certified.badass`).
 
-## Testing
+## Development
 
-Edit the `json` file at `conf/infura_example.json`.
-Add your project ID and project secret then rename the file to `infura.json`
+To contribute or modify this plugin you can install it in a different working
+directory with git, but it must be linked into hsd correctly to work:
+
+```
+git clone https://github.com/imperviousinc/handover
+cd handover
+npm install
+
+cd /path/to/hsd/repo
+ln -s /path/to/handover /node_modules
+
+export NODE_PRESERVE_SYMLINKS=1
+
+hsd --plugins handover
+```
+
+## Testing
 
 Run unit tests: `npm run test`
 
-Run integration test: `test/handover-plugin-test.sh`
+Run integration test:
 
+```
+cd /path/to/hsd
+
+node_modules/handover/test/handover-plugin-test.sh
+```
 
 ## Credit
 
 This plugin relies on the [ethers.js](https://github.com/ethers-io/ethers.js/) library.
 
 Inspiration comes from [hsd-ens-resolution](https://github.com/tynes/hsd-ens-resolution)
-by the very handsome and super-friendly [@tynes](https://github.com/tynes)
+by the very handsome and super-friendly [@tynes](https://github.com/tynes).
+
+Thanks to [@rithvikvibhu](https://github.com/rithvikvibhu) for the name "handover".
