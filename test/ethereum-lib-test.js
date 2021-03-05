@@ -8,14 +8,13 @@ const {wire} = require('bns');
 const {BufferReader} = require('bufio');
 
 const Ethereum = require('../lib/ethereum');
-const json = require('../conf/infura.json');
 
 describe('lib/ethereum', function () {
   this.timeout(60000);
   let ethereum;
 
   before(async () => {
-    ethereum = new Ethereum(json);
+    ethereum = new Ethereum();
     await ethereum.init();
   });
 
