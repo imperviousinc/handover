@@ -150,14 +150,6 @@ DNSSEC: The plugin will generate an ephemeral DNSSEC key set (ZSK and KSK) to
 sign records it retrieves from Ethereum. DS records for those keys will be
 synthetically inserted into the HNS root zone of the local `hsd`.
 
-Direct Abstract ENS resolution: Currently the plugin will resolve ENS names directly
-like `fuckingfucker.eth` but we want to expand that using HIP-0005 to resolve
-queries on forks of ENS, like so:
-
-```
-certified.badass.0x36fc69f0983E536D1787cC83f481581f22CCA2A1._eth.
-```
-
 Subdomains: The plugin has not been tested on sub domains of names registered
 at the ENS contract root (e.g. `whynot.fuckingfucker.eth` or `yesiam.certified.badass`).
 
