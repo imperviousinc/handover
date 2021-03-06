@@ -171,6 +171,13 @@ export NODE_PRESERVE_SYMLINKS=1
 hsd --plugins handover
 ```
 
+If you need `sudo` to listen on port `53`:
+
+```
+export NODE_PRESERVE_SYMLINKS=1
+sudo -E hsd --plugins handover --rs-port 53
+```
+
 ## Testing
 
 Run unit tests: `npm run test`
