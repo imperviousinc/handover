@@ -5,15 +5,11 @@ A plugin for `hsd` to enable DNS resolution on external networks like Ethererum.
 ## Installation & Usage
 
 Before installing, you need an Infura API key. Go to infura.io, create a new
-project and get a free API key. The plugin requires a patch to `hsd` still in
-review: https://github.com/handshake-org/hsd/pull/558 
+project and get a free API key. The plugin requires master branch of `hsd`
+(currently unreleased). 
 
 ```
-# pull the branch of hsd
-
 cd /path/to/hsd
-git fetch origin pull/558/head:dnsplugins1
-git checkout dnsplugins1
 
 # install the plugin
 npm install imperviousinc/handover
