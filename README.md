@@ -13,6 +13,7 @@ review: https://github.com/handshake-org/hsd/pull/558
 
 cd /path/to/hsd
 git fetch origin pull/558/head:dnsplugins1
+git checkout dnsplugins1
 
 # install the plugin
 npm install imperviousinc/handover
