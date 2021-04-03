@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/imperviousinc/handover#readme",
   "dependencies": {
+    "axios": "^0.21.1",
+    "blru": "^0.1.6",
     "bufio": "^1.0.7",
     "ethers": "^5.0.31"
   },
