@@ -34,6 +34,7 @@
     "bns": "~0.14.0"
   },
   "devDependencies": {
+    "@types/node": "^14.14.41",
     "bmocha": "^2.1.5"
   }
 }
