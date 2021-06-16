@@ -16,20 +16,22 @@ npm install imperviousinc/handover
 ```
 
 Your Infura credentials can be passed to the plugin in the same way(s) as all
-other `hsd` configuraiton parameters:
+other `hsd` configuration parameters:
 
 Command line:
 
 ```
 hsd \
  --plugins=handover \
+ --handover-provider=infura
  --handover-infura-projectid=<...> \
  --handover-infura-projectsecret=<...>
-``` 
+```
 
 Environment variables:
 
 ```
+export HSD_HANDOVER_PROVIDER=infura
 export HSD_HANDOVER_INFURA_PROJECTID=<...>
 export HSD_HANDOVER_INFURA_PROJECTSECRET=<...>
 hsd --plugins handover
@@ -40,6 +42,7 @@ Configuration file:
 `~/.hsd/hsd.conf`:
 
 ```
+handover-provider: infura
 handover-infura-projectid: <...>
 handover-infura-projectsecret: <...>
 plugins: handover
@@ -98,6 +101,42 @@ $ node
 '096365727469666965640662616461737300000100010000ea600004b8495201'
 ```
 
+## Using a local Ethereum provider
+
+To use a local Etherum node over JSON-RPC instead of Infura, use these configuration options instead.
+
+* `handover-jsonrpc-ens-address` is an ethereum address for the ENS registry to use when resolving '.eth' requests.
+* `handover-jsonrpc-url` (optional) specify the jsonrpc connection url. If not provided, will use the ethersjs default.
+
+Command line:
+
+```
+hsd \
+ --plugins=handover \
+ --handover-provider=jsonrpc \
+ --handover-jsonrpc-url=<...> \
+ --handover-jsonrpc-ens-address=<...>
+``` 
+
+Environment variables:
+
+```
+export HSD_HANDOVER_INFURA_PROJECTID=<...>
+export HSD_HANDOVER_INFURA_PROJECTSECRET=<...>
+hsd --plugins handover
+```
+
+Configuration file:
+
+`~/.hsd/hsd.conf`:
+
+```
+handover-provider: jsonrpc
+handover-jsonrpc-url: <...>
+handover-jsonrpc-ens-address: <...>
+plugins: handover
+```
+
 ## Explanation
 
 When `hsd` is run with this plugin, a middleware function is added to the HNS root
@@ -122,8 +161,8 @@ request with the full query string (i.e. `certified.badass`).
 
 There's still a lot "TODO":
 
-Local Ethereum provider: Currently the plugin relies on the Infura API. However,
-it is trivial to add an option to use a local Ethereum full node instead.
+More config options: Support running against live testnets, without a '.ens' resolver
+(to simplify testing), etc.
 
 Cache: The Ethereum interface should cache "resolver" and "registry" contract
 objects instead of requesting them from the Ethereum provider on each query.
