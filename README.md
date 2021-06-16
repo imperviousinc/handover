@@ -182,10 +182,6 @@ brantly.eth          notice               Not for sale
 brantly.eth          url                  http://brantly.xyz/
 ```
 
-DNSSEC: The plugin will generate an ephemeral DNSSEC key set (ZSK and KSK) to
-sign records it retrieves from Ethereum. DS records for those keys will be
-synthetically inserted into the HNS root zone of the local `hsd`.
-
 Subdomains: The plugin has not been tested on sub domains of names registered
 at the ENS contract root (e.g. `whynot.fuckingfucker.eth` or `yesiam.certified.badass`).
 
