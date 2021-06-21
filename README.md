@@ -125,9 +125,6 @@ There's still a lot "TODO":
 Local Ethereum provider: Currently the plugin relies on the Infura API. However,
 it is trivial to add an option to use a local Ethereum full node instead.
 
-Cache: The Ethereum interface should cache "resolver" and "registry" contract
-objects instead of requesting them from the Ethereum provider on each query.
-
 Additional ENS types: This plugin currently only supports resolving of EIP-1185
 data (aka "actual DNS records on ENS") but ENS itself has support for many
 abstract data types like [content hashes](https://eips.ethereum.org/EIPS/eip-1577)
